@@ -10,11 +10,13 @@ const setup = () => {
     ...utils
   };
 };
+
 test("render Main components header", () => {
   const { getByText } = setup();
   const headerElement = getByText(/Main page goes here/i);
   expect(headerElement).toBeInTheDocument();
 });
+
 test("render input component", () => {
   const { getByTestId } = setup();
   const inputContainer = getByTestId(/input-container/i);

@@ -7,3 +7,4 @@ test("render Main components header", () => {
   const headerElement = getByText(/Main page goes here/i);
   expect(headerElement).toBeInTheDocument();
 });
+

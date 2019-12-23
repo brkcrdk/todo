@@ -17,7 +17,7 @@ test("It should render input", () => {
 });
 
 test("it should render label", () => {
-  const { input, getByText } = setup();
+  const { getByText } = setup();
   const labelElement = getByText(/Add todo:/i);
   expect(labelElement).toBeInTheDocument();
 });

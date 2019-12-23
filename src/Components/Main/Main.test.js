@@ -15,3 +15,8 @@ test("render Main components header", () => {
   const headerElement = getByText(/Main page goes here/i);
   expect(headerElement).toBeInTheDocument();
 });
+test("render input component", () => {
+  const { getByTestId } = setup();
+  const inputContainer = getByTestId(/input-container/i);
+  expect(inputContainer).toBeInTheDocument();
+});

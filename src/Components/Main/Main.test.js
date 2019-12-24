@@ -4,7 +4,7 @@ import Main from "./Main";
 
 const setup = () => {
   const utils = render(<Main />);
-  const main = utils.getByLabelText("todo-input");
+  const main = utils.getByTestId("main-container");
   return {
     main,
     ...utils
@@ -15,10 +15,4 @@ test("render Main components header", () => {
   const { getByText } = setup();
   const headerElement = getByText(/Main page goes here/i);
   expect(headerElement).toBeInTheDocument();
-});
-
-test("render input component", () => {
-  const { getByTestId } = setup();
-  const inputContainer = getByTestId(/input-container/i);
-  expect(inputContainer).toBeInTheDocument();
 });

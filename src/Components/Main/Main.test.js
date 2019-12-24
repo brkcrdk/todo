@@ -22,3 +22,9 @@ test("render item component", () => {
   const itemElement = getByTestId(/item-container/i);
   expect(itemElement).toBeInTheDocument();
 });
+
+test("render list component", () => {
+  const { getByTestId } = setup();
+  const itemElement = getByTestId(/list-container/i);
+  expect(itemElement).toBeInTheDocument();
+});

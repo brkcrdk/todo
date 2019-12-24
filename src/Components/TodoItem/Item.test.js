@@ -1,11 +1,12 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import Item from "./Item";
+import List from "../TodoList/List";
 const setup = () => {
   const utils = render(<Item />);
-  const form = utils.getByTestId("item-container");
+  const form = utils.getByTestId(/item-container/i);
   const input = utils.getByLabelText("todo-input");
-  const button = utils.getByTestId("add-button");
+  const button = utils.getByTestId(/add-button/i);
   return {
     input,
     form,
@@ -28,4 +29,8 @@ test("render input item", () => {
 test("render add button", () => {
   const { button } = setup();
   expect(button).toBeInTheDocument();
+});
+
+test("when clicked add item", () => {
+  const { button } = setup();
 });

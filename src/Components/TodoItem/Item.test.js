@@ -2,9 +2,9 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import Item from "./Item";
 const setup = () => {
-  const { utils } = render(<Item />);
-  const form = utils.getByTestId(/item-container/i);
-  const input = utils.getByLabelText(/todo-input/i);
+  const { utils, getByTestId, getByLabelText } = render(<Item />);
+  const form = getByTestId(/item-container/i);
+  const input = getByLabelText(/todo-input/i);
   return {
     input,
     form,

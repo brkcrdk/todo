@@ -3,8 +3,8 @@ import { render } from "@testing-library/react";
 import Main from "./Main";
 
 const setup = () => {
-  const utils = render(<Main />);
-  const main = utils.getByTestId("main-container");
+  const { utils, getByTestId } = render(<Main />);
+  const main = getByTestId(/main-container/i);
   return {
     main,
     ...utils

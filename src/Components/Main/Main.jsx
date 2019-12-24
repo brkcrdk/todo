@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Item from "../TodoItem/Item";
 const Main = () => {
-  const [todo, setTodo] = useState([]);
+  // const [todo, setTodo] = useState([]);
   const [value, setValue] = useState("");
 
   const handleChange = (e) => {

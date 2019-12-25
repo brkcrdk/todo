@@ -1,13 +1,15 @@
 import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import Item from "./Item";
+import List from "../List/List";
 
 afterEach(cleanup);
 
 const setup = () => {
   const utils = render(<Item />);
   const input = utils.getByTestId(/todo-input/i);
-  return { input, ...utils };
+  const button = utils.getByText("Add Todo");
+  return { input, button, ...utils };
 };
 
 test("should render input", () => {
@@ -22,7 +24,13 @@ test("input changes value when something typed", () => {
 });
 
 test("should render Add button", () => {
-  const { getByText } = setup();
-  const button = getByText("Add Todo");
+  const { button } = setup();
   expect(button).toBeInTheDocument();
+});
+
+test("should add value to todo when clicked", () => {
+  const { getByTestId } = render(<List />);
+  const { button } = setup();
+  const list = getByTestId(/list-container/i);
+  C;
 });

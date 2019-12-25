@@ -4,13 +4,7 @@ import Main from "./Main";
 
 const setup = () => {
   const utils = render(<Main />);
-  const main = utils.getByTestId(/main-container/i);
-  const item = utils.getByTestId(/item-container/i);
-  const list = utils.getByTestId(/list-container/i);
   return {
-    item,
-    list,
-    main,
     ...utils
   };
 };
@@ -21,6 +15,14 @@ test("render Main components header", () => {
   expect(headerElement).toBeInTheDocument();
 });
 
-test("should render item component", () => {});
+test("should render item component", () => {
+  const { getByTestId } = setup();
+  const item = getByTestId(/item-container/i);
+  expect(item).toBeInTheDocument();
+});
 
-test("should render list component", () => {});
+test("should render list component", () => {
+  const { getByTestId } = setup();
+  const list = getByTestId(/list-container/i);
+  expect(list).toBeInTheDocument();
+});

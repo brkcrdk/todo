@@ -1,7 +1,11 @@
 import React from "react";
 
-const Item = () => {
-  return <div data-testid="item-container"></div>;
+const Item = ({ value, onChange }) => {
+  return (
+    <div data-testid="item-container">
+      <input data-testid="todo-input" value={value} onChange={onChange} />
+    </div>
+  );
 };
 
 export default Item;

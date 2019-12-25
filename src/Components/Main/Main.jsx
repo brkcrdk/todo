@@ -19,7 +19,7 @@ const Main = () => {
   return (
     <div data-testid="main-container">
       <h3>Main page goes here</h3>
-      <Item />
+      <Item value={value} onChange={handleChange} />
       <List />
     </div>
   );

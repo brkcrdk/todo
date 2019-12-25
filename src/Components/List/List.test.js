@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import List from "./List";
 
 const setup = () => {
@@ -14,8 +14,4 @@ const setup = () => {
 test("should render ul", () => {
   const { list } = setup();
   expect(list).toBeInTheDocument();
-});
-
-test("should render list", () => {
-  const data = [{ job: "Go to gym" }, { job: "Clean the house" }];
 });

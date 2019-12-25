@@ -4,8 +4,12 @@ import Main from "./Main";
 
 const setup = () => {
   const utils = render(<Main />);
-  const main = utils.getByTestId(/main-container/gi);
+  const main = utils.getByTestId(/main-container/i);
+  const item = utils.getByTestId(/item-container/i);
+  const list = utils.getByTestId(/list-container/i);
   return {
+    item,
+    list,
     main,
     ...utils
   };

@@ -30,7 +30,13 @@ test("should render Add button", () => {
 
 test("should add value to todo when clicked", () => {
   const { getByTestId } = render(<List />);
-  const { button } = setup();
+  const { button, input } = setup();
   const list = getByTestId(/list-container/i);
-  C;
+  const data = [{ job: "Go gym" }, { job: "Go scholl" }, { job: "bla" }];
+  data.map((item, key) => {
+    input.value = item.job;
+    fireEvent.change(input);
+    fireEvent.click(button);
+    expect(list.children.length).toBe(key);
+  });
 });

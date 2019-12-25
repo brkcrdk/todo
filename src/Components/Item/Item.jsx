@@ -1,10 +1,10 @@
 import React from "react";
 
-const Item = ({ value, onChange }) => {
+const Item = ({ value, onChange, onClick }) => {
   return (
     <div data-testid="item-container">
       <input data-testid="todo-input" value={value} onChange={onChange} />
-      <button>Add Todo</button>
+      <button onClick={onClick}>Add Todo</button>
     </div>
   );
 };

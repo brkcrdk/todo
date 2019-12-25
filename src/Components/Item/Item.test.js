@@ -23,6 +23,6 @@ test("input changes value when something typed", () => {
 
 test("should render Add button", () => {
   const { getByText } = setup();
-  const button = getByText(/Add Todo/i);
+  const button = getByText("Add Todo");
   expect(button).toBeInTheDocument();
 });

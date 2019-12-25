@@ -1,7 +1,7 @@
 import React from "react";
 
 const List = () => {
-  return <div data-testid="list-container"></div>;
+  return <ul data-testid="list-container"></ul>;
 };
 
 export default List;

@@ -1,6 +1,8 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, cleanup } from "@testing-library/react";
 import Item from "./Item";
+
+afterEach(cleanup);
 
 const setup = () => {
   const utils = render(<Item />);
@@ -15,7 +17,7 @@ test("should render input", () => {
 
 test("input changes value when something typed", () => {
   const { input } = setup();
-  fireEvent.change("23");
+  fireEvent.change(input, { target: { value: "23" } });
   expect(input.value).toBe("23");
 });
 

@@ -1,7 +1,6 @@
 import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import Item from "./Item";
-import List from "../List/List";
 
 afterEach(cleanup);
 

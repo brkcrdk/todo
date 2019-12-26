@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, cleanup } from "@testing-library/react";
 import Main from "./Main";
 
 const setup = () => {
@@ -8,7 +8,7 @@ const setup = () => {
     ...utils
   };
 };
-
+afterEach(cleanup);
 test("render Main components header", () => {
   const { getByText } = setup();
   const headerElement = getByText(/Main page goes here/i);

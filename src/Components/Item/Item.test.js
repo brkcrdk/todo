@@ -2,14 +2,14 @@ import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import Item from "./Item";
 
-afterEach(cleanup);
-
 const setup = () => {
   const utils = render(<Item />);
   const input = utils.getByTestId(/todo-input/i);
   const button = utils.getByText("Add Todo");
   return { input, button, ...utils };
 };
+
+afterEach(cleanup);
 
 test("should render input", () => {
   const { input } = setup();

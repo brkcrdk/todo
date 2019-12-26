@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, cleanup } from "@testing-library/react";
 import List from "./List";
 
 const setup = () => {
@@ -10,6 +10,8 @@ const setup = () => {
     ...utils
   };
 };
+
+afterEach(cleanup);
 
 test("should render ul", () => {
   const { list } = setup();

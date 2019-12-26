@@ -26,5 +26,3 @@ test("should render Add button", () => {
   const { button } = setup();
   expect(button).toBeInTheDocument();
 });
-
-test("should add value to todo when clicked", () => {});

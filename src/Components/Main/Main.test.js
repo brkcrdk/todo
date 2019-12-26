@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import Main from "./Main";
 
 const setup = () => {
@@ -25,4 +25,14 @@ test("should render list component", () => {
   const { getByTestId } = setup();
   const list = getByTestId(/list-container/i);
   expect(list).toBeInTheDocument();
+});
+
+test("should add list item when add button clicked", () => {
+  const { getByTestId, getByText } = setup();
+  const button = getByText("Add Todo");
+  const input = getByTestId(/todo-input/i);
+  const list = getByTestId(/list-container/i);
+  fireEvent.change(input, { target: { value: "Learn react" } });
+  fireEvent.click(button);
+  expect(list.children.length).toBe(3);
 });

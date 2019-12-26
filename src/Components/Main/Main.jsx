@@ -12,7 +12,7 @@ const Main = () => {
     }
   };
   const handleChange = (e) => {
-    setValue(e.target.value);
+    setValue(e.target.value.trim());
   };
   return (
     <div data-testid="main-container">

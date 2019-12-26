@@ -6,7 +6,10 @@ const Main = () => {
   const [value, setValue] = useState("");
 
   const handleClick = (e) => {
-    setTodo([...todo, { job: value }]);
+    if (value !== "") {
+      setTodo([...todo, { job: value }]);
+      setValue("");
+    }
   };
   const handleChange = (e) => {
     setValue(e.target.value);

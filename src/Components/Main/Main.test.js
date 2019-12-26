@@ -32,7 +32,14 @@ test("should add list item when add button clicked", () => {
   const button = getByText("Add Todo");
   const input = getByTestId(/todo-input/i);
   const list = getByTestId(/list-container/i);
-  fireEvent.change(input, { target: { value: "Learn react" } });
+  expect(input.value).toBe("");
+  fireEvent.change(input, {
+    target: {
+      value: "Learn react"
+    }
+  });
+  expect(input.value).not.toBe("");
   fireEvent.click(button);
   expect(list.children.length).toBe(3);
+  expect(input.value).toBe("");
 });

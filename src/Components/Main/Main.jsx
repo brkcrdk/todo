@@ -30,6 +30,7 @@ const Main = () => {
     <div id="main-container">
       <Sidebar />
       <span onClick={handleToggle}>X</span>
+      <div>Content here</div>
     </div>
   );
 };

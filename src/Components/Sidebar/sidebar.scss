@@ -9,6 +9,9 @@
   height: 100vh;
   max-width: 0;
   transition: max-width 0.5s;
+  @include mobileTablet {
+    max-width: 7em;
+  }
   li {
     list-style-type: none;
     display: flex;

@@ -25,6 +25,8 @@ const Tabs = ({ value }) => {
       {renderTabs}
 
       <List active={active} index={0} />
+      <List active={active} index={1} />
+      <List active={active} index={2} />
 
       {/* <div className={`tab-content ${active === 1 ? "active" : ""}`}>
         <List />

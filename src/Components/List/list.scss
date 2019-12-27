@@ -4,4 +4,10 @@
   border: 1px solid grey;
   border-radius: 0.3em;
   width: 90%;
+  margin: 0 auto;
+}
+
+.active {
+  display: flex;
+  color: red;
 }

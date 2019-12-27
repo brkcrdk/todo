@@ -24,10 +24,10 @@ $desktop: 1024px;
 }
 
 $colours: (
-  bgColor: #fcf7f9,
-  pink: #c9bdc5,
-  red: #c2271f,
-  green: #188f1c
+  orange: #fc6657,
+  black: #353a3e,
+  bgColorGrey: #f1f1f1,
+  bgColorWhite: #ffffff
 );
 
 @function getColor($colour-name) {

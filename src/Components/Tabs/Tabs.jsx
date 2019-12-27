@@ -36,7 +36,7 @@ const Tabs = ({ value, onChange }) => {
   ));
   return (
     <div id="tab-container">
-      {renderButtons}
+      <div id="buttons">{renderButtons}</div>
       {renderList}
     </div>
   );

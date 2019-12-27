@@ -38,8 +38,7 @@ $colours: (
   myOrange: #fc6657,
   myGrey: #535758,
   sidebar: #353a3e,
-  bgColorGrey: #f1f1f1,
-  bgColorWhite: #ffffff
+  bgColorGrey: #f1f1f1
 );
 
 @function getColor($colour-name) {

@@ -20,6 +20,10 @@
     :first-child {
       margin-top: 1em;
     }
+    filter: grayscale(100%);
+    &:hover {
+      filter: grayscale(0);
+    }
     > i {
       color: getColor(myOrange);
       font-size: 1.6em;

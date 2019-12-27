@@ -1,11 +1,13 @@
 import React from "react";
 import "./list.scss";
-const List = ({ active, index }) => {
+const List = ({ active, index, value, onChange }) => {
   return (
     <div
       id="list-container"
       className={`tab-content ${active === index ? "active" : ""}`}>
-      Content {index}
+      <div>
+        <input value={value} onChange={onChange} />
+      </div>
     </div>
   );
 };

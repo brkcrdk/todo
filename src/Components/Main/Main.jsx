@@ -5,6 +5,7 @@ import Navbar from "../Navbar/Navbar";
 import Tabs from "../Tabs/Tabs";
 const Main = () => {
   const [arr, setArr] = useState([1, 2, 3, 4, 5, 6]);
+  const [value, setValue] = useState("");
   const swap = (array, idx1) => {
     const newArray = array.slice();
     newArray[idx1] = array[idx1 + 1];
@@ -16,13 +17,16 @@ const Main = () => {
     const newArry = swap(arr, index);
     setArr(newArry);
   };
-
+  const inputOnChange = (e) => {
+    setValue(e.target.value);
+  };
+  console.log(value);
   return (
     <div id="main-container">
       <Sidebar />
       <div id="content-container">
         <Navbar />
-        <Tabs />
+        <Tabs value={value} onChange={inputOnChange} />
       </div>
     </div>
   );

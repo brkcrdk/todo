@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./tabs.scss";
 import List from "../List/List";
 
-const Tabs = ({ value }) => {
+const Tabs = ({ value, onChange }) => {
   const [active, setActive] = useState(0);
   const handleTab = (index) => {
     if (active !== index) {
@@ -19,21 +19,19 @@ const Tabs = ({ value }) => {
       <span>{todo}</span>
     </button>
   ));
-
+  const renderList = tabs.map((todo, index) => (
+    <List
+      key={index}
+      active={active}
+      index={index}
+      value={value}
+      onChange={onChange}
+    />
+  ));
   return (
     <div id="tab-container">
       {renderTabs}
-
-      <List active={active} index={0} />
-      <List active={active} index={1} />
-      <List active={active} index={2} />
-
-      {/* <div className={`tab-content ${active === 1 ? "active" : ""}`}>
-        <List />
-      </div>
-      <div className={`tab-content ${active === 2 ? "active" : ""}`}>
-        <List />
-      </div> */}
+      {renderList}
     </div>
   );
 };

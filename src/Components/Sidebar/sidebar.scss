@@ -7,8 +7,8 @@
   background-color: getColor(sidebar);
   flex-direction: column;
   height: 100vh;
-  max-width: 7em;
-
+  max-width: 0;
+  transition: max-width 0.5s;
   li {
     list-style-type: none;
     display: flex;

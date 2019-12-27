@@ -3,7 +3,7 @@ import "./sidebar.scss";
 import avatar from "./avatar.png";
 const Sidebar = () => {
   return (
-    <div id="sidebar-container">
+    <div id="sidebar-container" className="close">
       <div id="top-section">
         <li>
           <img src={avatar} alt="avatar-img" />

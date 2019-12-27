@@ -18,6 +18,7 @@ const Main = () => {
   return (
     <div id="main-container">
       <Sidebar />
+      <span>X</span>
     </div>
   );
 };

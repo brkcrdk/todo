@@ -3,13 +3,24 @@
 #sidebar-container {
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
+  background-color: getColor(sidebar);
   flex-direction: column;
   height: 100vh;
-  max-width: 6em;
-  background-color: getColor(black);
-  @include mobileS {
-    transform: translateX(-100);
+  max-width: 7em;
+
+  li {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    :first-child {
+      margin-top: 1em;
+    }
   }
-  @include mobileTablet {
+
+  img {
+    width: 80%;
+    height: 5.5em;
   }
 }

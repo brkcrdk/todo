@@ -6,6 +6,8 @@ $mobileL: 420px;
 $mobileTablet: 600px;
 $tablet: 768px;
 $desktop: 1024px;
+$wideScreen: 1441px;
+
 @mixin mobileS {
   @media (min-width: #{$mobileS}) {
     @content;
@@ -16,16 +18,25 @@ $desktop: 1024px;
     @content;
   }
 }
-
+@mixin tablet {
+  @media (min-width:#{$tablet}) {
+    @content;
+  }
+}
 @mixin desktop {
   @media (min-width:#{$desktop}) {
     @content;
   }
 }
 
+@mixin wideScreen {
+  @media (min-width:#{$wideScreen}) {
+    @content;
+  }
+}
 $colours: (
   orange: #fc6657,
-  black: #353a3e,
+  sidebar: #353a3e,
   bgColorGrey: #f1f1f1,
   bgColorWhite: #ffffff
 );

@@ -1,11 +1,13 @@
 import React from "react";
 import "./sidebar.scss";
-
+import avatar from "./avatar.png";
 const Sidebar = () => {
   return (
     <div id="sidebar-container">
       <div id="top-section">
-        <li>Avatar</li>
+        <li>
+          <img src={avatar} alt="avatar-img" />
+        </li>
         <li>Ayarlar</li>
         <li>Görevler</li>
       </div>

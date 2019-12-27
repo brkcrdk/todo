@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./main.scss";
 import Sidebar from "../Sidebar/Sidebar";
 import Navbar from "../Navbar/Navbar";
+import Tabs from "../Tabs/Tabs";
 const Main = () => {
   const [arr, setArr] = useState([1, 2, 3, 4, 5, 6]);
   const swap = (array, idx1) => {
@@ -21,6 +22,7 @@ const Main = () => {
       <Sidebar />
       <div id="content-container">
         <Navbar />
+        <Tabs />
       </div>
     </div>
   );

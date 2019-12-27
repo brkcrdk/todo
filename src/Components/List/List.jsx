@@ -5,8 +5,9 @@ const List = ({ active, index, value, onChange }) => {
     <div
       id="list-container"
       className={`tab-content ${active === index ? "active" : ""}`}>
-      <div>
-        <input value={value} onChange={onChange} />
+      <div id="input-addBtn">
+        <input value={value} onChange={onChange} placeholder="Arama.." />
+        <button>Yeni görev ekle</button>
       </div>
     </div>
   );

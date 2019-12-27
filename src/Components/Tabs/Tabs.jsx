@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./tabs.scss";
 import List from "../List/List";
-
+import Button from "./Button";
 const Tabs = ({ value, onChange }) => {
   const [active, setActive] = useState(0);
   const handleTab = (index) => {
@@ -9,15 +9,21 @@ const Tabs = ({ value, onChange }) => {
       setActive(index);
     }
   };
-  const tabs = ["Tüm Görevler", "Aktif Görevler", "Biten Görevler"];
-  const renderTabs = tabs.map((todo, index) => (
-    <button
+  const tabs = [
+    { tab: "Tüm Görevler", icon: "sign-in-alt" },
+    { tab: "Aktif Görevler", icon: "clock" },
+    { tab: "Biten Görevler", icon: "check-circle" }
+  ];
+
+  const renderButtons = tabs.map((todo, index) => (
+    <Button
       key={index}
+      label={todo.tab}
+      icon={todo.icon}
       onClick={() => {
         handleTab(index);
-      }}>
-      <span>{todo}</span>
-    </button>
+      }}
+    />
   ));
   const renderList = tabs.map((todo, index) => (
     <List
@@ -30,7 +36,7 @@ const Tabs = ({ value, onChange }) => {
   ));
   return (
     <div id="tab-container">
-      {renderTabs}
+      {renderButtons}
       {renderList}
     </div>
   );

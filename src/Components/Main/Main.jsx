@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import "./main.scss";
 import Sidebar from "../Sidebar/Sidebar";
+
 const Main = () => {
   const [arr, setArr] = useState([1, 2, 3, 4, 5, 6]);
   const swap = (array, idx1) => {
@@ -14,7 +16,7 @@ const Main = () => {
     setArr(newArry);
   };
   return (
-    <div>
+    <div id="main-container">
       <Sidebar />
     </div>
   );

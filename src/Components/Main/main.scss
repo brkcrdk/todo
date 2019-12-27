@@ -4,12 +4,9 @@
   display: flex;
   max-width: 1441px;
   margin: 0 auto;
-  > span {
-    @include mobileS {
-      display: block;
-    }
-    @include mobileTablet {
-      display: none;
-    }
-  }
+}
+
+#content-container {
+  display: grid;
+  width: 100%;
 }

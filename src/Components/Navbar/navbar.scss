@@ -1,0 +1,14 @@
+@import "../../utils.scss";
+
+#navbar-container {
+  > i {
+    @include mobileS {
+      display: block;
+      font-size: 1.3em;
+      margin: 1em;
+    }
+    @include mobileTablet {
+      display: none;
+    }
+  }
+}

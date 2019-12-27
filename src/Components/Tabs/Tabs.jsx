@@ -23,15 +23,15 @@ const Tabs = ({ value }) => {
   return (
     <div id="tab-container">
       {renderTabs}
-      <div className={`tab-content ${active === 0 ? "active" : ""}`}>
-        <List />
-      </div>
-      <div className={`tab-content ${active === 1 ? "active" : ""}`}>
+
+      <List active={active} index={0} />
+
+      {/* <div className={`tab-content ${active === 1 ? "active" : ""}`}>
         <List />
       </div>
       <div className={`tab-content ${active === 2 ? "active" : ""}`}>
         <List />
-      </div>
+      </div> */}
     </div>
   );
 };

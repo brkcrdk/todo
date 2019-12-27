@@ -1,10 +1,10 @@
 import React from "react";
 import "./list.scss";
-const List = ({ value }) => {
+const List = ({ active, index }) => {
   return (
     <div id="list-container">
-      <div id="input-addTodo">
-        <input />
+      <div className={`tab-content ${active === index ? "active" : ""}`}>
+        Content
       </div>
     </div>
   );

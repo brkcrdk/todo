@@ -11,6 +11,8 @@ const Sidebar = () => {
         </li>
         <Icon label="Görevler" icon="bars" />
         <Icon label="Ayarlar" icon="cog" />
+      </div>
+      <div id="bottom-section">
         <Icon label="Kapat" icon="power-off" />
       </div>
     </div>

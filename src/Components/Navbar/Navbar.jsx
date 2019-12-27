@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./navbar.scss";
 const Navbar = () => {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
 
   const handleToggle = () => {
     const sidebar = document.getElementById("sidebar-container");

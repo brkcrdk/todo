@@ -13,11 +13,15 @@ const Sidebar = () => {
           <span>Görevler</span>
         </li>
         <li>
+          <i class="fas fa-cog" />
           <span>Ayarlar</span>
         </li>
       </div>
       <div id="bottom-section">
-        <li>Kapat</li>
+        <li>
+          <i class="fas fa-power-off" />
+          <span>Kapat</span>
+        </li>
       </div>
     </div>
   );

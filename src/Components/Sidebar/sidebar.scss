@@ -21,12 +21,12 @@
       margin-top: 1em;
     }
     > i {
-      color: getColor(orange);
-      font-size: 2em;
+      color: getColor(myOrange);
+      font-size: 1.6em;
     }
     > span {
       color: white;
-      font-size: 0.9em;
+      font-size: 0.8em;
     }
     > img {
       margin: 0 auto;
@@ -34,4 +34,8 @@
       height: 5.5em;
     }
   }
+}
+
+#bottom-section {
+  margin-bottom: 2em;
 }

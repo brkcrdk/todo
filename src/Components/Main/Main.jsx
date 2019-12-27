@@ -22,7 +22,7 @@ const Main = () => {
       sidebar.style.maxWidth = 0;
       setToggle(false);
     } else {
-      sidebar.style.maxWidth = "7em";
+      sidebar.style.maxWidth = "6.5em";
       setToggle(true);
     }
   };

@@ -8,8 +8,13 @@ const Sidebar = () => {
         <li>
           <img src={avatar} alt="avatar-img" />
         </li>
-        <li>Ayarlar</li>
-        <li>Görevler</li>
+        <li>
+          <i className="fas fa-bars" />
+          <span>Görevler</span>
+        </li>
+        <li>
+          <span>Ayarlar</span>
+        </li>
       </div>
       <div id="bottom-section">
         <li>Kapat</li>

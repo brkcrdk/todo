@@ -5,22 +5,35 @@
   padding: 1em;
   padding-top: 2em;
   background-color: getColor(bgColorGrey);
-  i {
-    font-size: 1.3em;
-    padding: 0 0.3em;
-  }
   span {
-    font-size: 0.75em;
     border: 0.6px solid lightgrey;
     padding: 0.5em 1em;
     border-radius: 1em;
-  }
-  > i {
     @include mobileS {
-      display: block;
+      font-size: 0.75em;
     }
-    @include mobileTablet {
-      display: none;
+    @include tablet {
+      font-size: 0.9em;
     }
   }
+}
+
+#toggleBtn {
+  font-size: 1.2em;
+  margin-top: 0.2em;
+  margin-right: 0.5em;
+  @include mobileS {
+    display: block;
+  }
+  @include mobileTablet {
+    display: none;
+  }
+}
+#panelBtn {
+  font-size: 0.9em;
+  background-color: getColor(myOrange);
+  color: white;
+  padding: 0.5em;
+  margin-right: 0.5em;
+  border-radius: 50%;
 }

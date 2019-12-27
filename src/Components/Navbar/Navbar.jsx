@@ -15,9 +15,9 @@ const Navbar = () => {
   };
   return (
     <div id="navbar-container">
-      <i className="fas fa-bars" onClick={handleToggle} />
+      <i className="fas fa-bars" onClick={handleToggle} id="toggleBtn" />
       <div>
-        <i className="fas fa-redo-alt" />
+        <i className="fas fa-redo-alt" id="panelBtn" />
         <span>Görev Yönetim Paneli</span>
       </div>
     </div>

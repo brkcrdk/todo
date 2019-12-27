@@ -17,12 +17,15 @@
     display: grid;
     margin: 0 auto;
     text-align: center;
-    :first-child {
-      margin-top: 1em;
-    }
+    cursor: pointer;
     filter: grayscale(100%);
     &:hover {
       filter: grayscale(0);
+      border-left: 1px solid getColor(myOrange);
+    }
+
+    > :first-child {
+      margin-top: 1em;
     }
     > i {
       color: getColor(myOrange);

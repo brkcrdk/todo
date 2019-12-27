@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./tabs.scss";
+import List from "../List/List";
 const Tabs = () => {
   const [active, setActive] = useState(0);
   const handleTab = (index) => {
@@ -23,13 +24,13 @@ const Tabs = () => {
     <div id="tab-container">
       {renderTabs}
       <div className={`tab-content ${active === 0 ? "active" : ""}`}>
-        Tüm Görevler
+        <List />
       </div>
       <div className={`tab-content ${active === 1 ? "active" : ""}`}>
-        Aktif Görevler
+        <List />
       </div>
       <div className={`tab-content ${active === 2 ? "active" : ""}`}>
-        Biten Görevler
+        <List />
       </div>
     </div>
   );

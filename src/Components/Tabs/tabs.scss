@@ -17,20 +17,32 @@
     cursor: pointer;
     border: 1px solid lightgrey;
     outline: none;
-    padding: 1em;
+    padding: 1em 3em;
+    position: relative;
     i {
       font-size: 1.5em;
       padding-right: 0.5em;
     }
-    span {
-      @include mobileS {
-        display: none;
-      }
-      @include mobileTablet {
-        display: inline-block;
-      }
-    }
   }
+}
+#tab-label {
+  @include mobileS {
+    display: none;
+  }
+  @include mobileTablet {
+    display: inline-block;
+  }
+}
+
+#active-count {
+  position: absolute;
+  padding: 0.3em 0.6em;
+  border-radius: 50%;
+  top: 0.5em;
+  right: 0.5em;
+  color: white;
+  font-weight: 700;
+  background-color: getColor(myOrange);
 }
 
 .activeBtn {

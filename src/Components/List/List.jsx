@@ -14,15 +14,17 @@ const List = ({
   section,
   handleIsDone
 }) => {
-  const list = todos.filter((todo, index) => {
-    if (section === "Aktif Görevler") {
-      return todo.isDone === false;
-    } else if (section === "Biten Görevler") {
-      return todo.isDone === true;
-    } else {
-      return todo;
-    }
-  });
+  const list =
+    todos &&
+    todos.filter((todo, index) => {
+      if (section === "Aktif Görevler") {
+        return todo.isDone === false;
+      } else if (section === "Biten Görevler") {
+        return todo.isDone === true;
+      } else {
+        return todo;
+      }
+    });
   const renderTodos =
     list &&
     list.map((todo, index) => (

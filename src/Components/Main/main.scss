@@ -4,6 +4,23 @@
   display: flex;
   max-width: 1441px;
   margin: 0 auto;
+  * {
+    ::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: grey;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: transparent;
+    }
+  }
 }
 
 #content-container {

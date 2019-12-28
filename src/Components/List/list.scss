@@ -17,7 +17,6 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid lightgrey;
-  margin-bottom: 1em;
   input {
     font-size: 1em;
     width: 100%;
@@ -52,4 +51,11 @@
       }
     }
   }
+}
+
+#item-container {
+  max-height: 55vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  border: none;
 }

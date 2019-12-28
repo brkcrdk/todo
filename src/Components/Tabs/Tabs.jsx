@@ -20,6 +20,8 @@ const Tabs = ({ value, onChange }) => {
       key={index}
       label={todo.tab}
       icon={todo.icon}
+      active={active}
+      index={index}
       onClick={() => {
         handleTab(index);
       }}

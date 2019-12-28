@@ -4,4 +4,14 @@
 }
 #buttons {
   background-color: getColor(bgColorGrey);
+  > button {
+    border: 1px solid lightgrey;
+    outline: none;
+    padding: 1em;
+    transition: 0.5s;
+  }
+}
+
+.activeBtn {
+  background-color: white;
 }

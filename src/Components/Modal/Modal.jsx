@@ -10,7 +10,7 @@ const Modal = () => {
         </button>
         <h5>Yeni Görev Ekle</h5>
         <textarea value="ssss" />
-        <button>Ekle</button>
+        <button>EKLE</button>
       </div>
     </div>
   );

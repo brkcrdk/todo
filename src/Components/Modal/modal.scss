@@ -45,11 +45,19 @@
   }
   > textarea {
     resize: none;
+    border-radius: 0.5em;
+    padding: 1em;
+    outline: none;
   }
   & button:last-child {
     margin: 0 auto;
     margin-top: 1.5em;
-    width: 7em;
+    width: 8em;
+    border-radius: 4em;
+    border: none;
+    padding: 1em;
+    background-color: getColor(myOrange);
+    color: white;
   }
 }
 
@@ -57,4 +65,11 @@
   position: absolute;
   top: 1em;
   right: 1em;
+  border-radius: 50%;
+  border: none;
+  background-color: getColor(myOrange);
+  color: white;
+  font-size: 1.2em;
+  padding: 0 0.3em;
+  cursor: pointer;
 }

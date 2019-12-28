@@ -3,6 +3,7 @@ import "./main.scss";
 import Sidebar from "../Sidebar/Sidebar";
 import Navbar from "../Navbar/Navbar";
 import Tabs from "../Tabs/Tabs";
+import Modal from "../Modal/Modal";
 const Main = () => {
   const [arr, setArr] = useState([1, 2, 3, 4, 5, 6]);
   const [value, setValue] = useState("");
@@ -27,6 +28,7 @@ const Main = () => {
       <div id="content-container">
         <Navbar />
         <Tabs value={value} onChange={inputOnChange} />
+        <Modal />
       </div>
     </div>
   );

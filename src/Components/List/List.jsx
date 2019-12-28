@@ -5,8 +5,12 @@ const List = ({ active, index, value, onChange }) => {
   const [modalToggle, setModalToggle] = useState(false);
   const handleModalToggle = () => {
     const modal = document.getElementById("modal-container");
-    if (modalToggle) {
+    if (modalToggle && modal) {
+      modal.style.display = "none";
+      setModalToggle(false);
     } else {
+      modal.style.display = "grid";
+      setModalToggle(true);
     }
   };
   return (
@@ -15,7 +19,7 @@ const List = ({ active, index, value, onChange }) => {
       className={`tab-content ${active === index ? "active" : ""}`}>
       <div id="input-addBtn">
         <input value={value} onChange={onChange} placeholder="Arama.." />
-        <button>
+        <button onClick={handleModalToggle}>
           <span>Yeni görev ekle</span>
           <i className="fas fa-plus" />
         </button>

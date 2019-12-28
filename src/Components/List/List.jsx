@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./list.scss";
 import ListItem from "../ListItem/ListItem";
 import { openModal } from "../Modal/modalToggle";
 const List = ({
   active,
   index,
-  value,
-  onChange,
   todos,
   removeTodo,
   moveUp,
@@ -14,6 +12,10 @@ const List = ({
   section,
   handleIsDone
 }) => {
+  const [search, setSearch] = useState("");
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
   const list =
     todos &&
     todos.filter((todo, index) => {
@@ -52,7 +54,7 @@ const List = ({
       id="list-container"
       className={`tab-content ${active === index ? "active" : ""}`}>
       <div id="input-addBtn">
-        <input value={value} onChange={onChange} placeholder="Arama.." />
+        <input value={search} onChange={handleSearch} placeholder="Arama.." />
         <button onClick={openModal}>
           <span>Yeni görev ekle</span>
           <i className="fas fa-plus" />

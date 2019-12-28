@@ -2,15 +2,7 @@ import React, { useState } from "react";
 import "./tabs.scss";
 import List from "../List/List";
 import Tab from "./Tab";
-const Tabs = ({
-  value,
-  onChange,
-  todos,
-  removeTodo,
-  moveUp,
-  moveDown,
-  handleIsDone
-}) => {
+const Tabs = ({ todos, removeTodo, moveUp, moveDown, handleIsDone }) => {
   const [active, setActive] = useState(0);
   const handleTab = (index) => {
     if (active !== index) {
@@ -41,8 +33,6 @@ const Tabs = ({
       key={index}
       active={active}
       index={index}
-      value={value}
-      onChange={onChange}
       todos={todos}
       removeTodo={removeTodo}
       moveUp={moveUp}

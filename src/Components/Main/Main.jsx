@@ -13,11 +13,8 @@ const Main = () => {
     { job: "Ödev yap", isDone: false, id: generateKey("ö") },
     { job: "Şu kitabı al", isDone: true, id: generateKey("ş") }
   ]);
-  const [searchValue, setSearchValue] = useState("");
   const [todoValue, setTodoValue] = useState("");
-  const searchInput = (e) => {
-    setSearchValue(e.target.value);
-  };
+
   const todoInput = (e) => {
     setTodoValue(e.target.value);
   };
@@ -64,8 +61,6 @@ const Main = () => {
       <div id="content-container">
         <Navbar />
         <Tabs
-          value={searchValue}
-          onChange={searchInput}
           todos={todos}
           removeTodo={removeTodo}
           moveUp={moveUp}

@@ -2,7 +2,16 @@ import React from "react";
 import "./list.scss";
 import ListItem from "../ListItem/ListItem";
 import { openModal } from "../Modal/modalToggle";
-const List = ({ active, index, value, onChange, todos, removeTodo }) => {
+const List = ({
+  active,
+  index,
+  value,
+  onChange,
+  todos,
+  removeTodo,
+  moveUp,
+  moveDown
+}) => {
   const renderTodos =
     todos &&
     todos.map((todo, index) => (
@@ -11,6 +20,12 @@ const List = ({ active, index, value, onChange, todos, removeTodo }) => {
         content={todo.job}
         removeTodo={() => {
           removeTodo(index);
+        }}
+        moveUp={() => {
+          moveUp(index);
+        }}
+        moveDown={() => {
+          moveDown(index);
         }}
       />
     ));

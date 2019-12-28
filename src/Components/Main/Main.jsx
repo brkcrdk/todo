@@ -14,17 +14,6 @@ const Main = () => {
   ]);
   const [searchValue, setSearchValue] = useState("");
   const [todoValue, setTodoValue] = useState("");
-  // const swap = (array, idx1) => {
-  //   const newArray = array.slice();
-  //   newArray[idx1] = array[idx1 + 1];
-  //   newArray[idx1 + 1] = array[idx1];
-  //   return newArray;
-  // };
-  // const handleClick = (index) => {
-  //   console.log(swap(arr, index));
-  //   const newArry = swap(arr, index);
-  //   setArr(newArry);
-  // };
   const searchInput = (e) => {
     setSearchValue(e.target.value);
   };
@@ -51,7 +40,7 @@ const Main = () => {
     }
   };
   const moveDown = (index) => {
-    if (index < todos.length) {
+    if (index < todos.length + 1) {
       const newArray = todos.slice();
       newArray[index] = todos[index + 1];
       newArray[index + 1] = todos[index];

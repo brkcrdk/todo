@@ -7,7 +7,10 @@ const List = ({ active, index, value, onChange }) => {
       className={`tab-content ${active === index ? "active" : ""}`}>
       <div id="input-addBtn">
         <input value={value} onChange={onChange} placeholder="Arama.." />
-        <button>Yeni görev ekle</button>
+        <button>
+          <span>Yeni görev ekle</span>
+          <i className="fas fa-plus" />
+        </button>
       </div>
     </div>
   );

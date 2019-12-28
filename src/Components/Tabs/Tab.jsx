@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = ({ onClick, label, icon }) => {
+const Tab = ({ onClick, label, icon }) => {
   return (
     <button onClick={onClick}>
       <i className={`fas fa-${icon}`} />
@@ -9,4 +9,4 @@ const Button = ({ onClick, label, icon }) => {
   );
 };
 
-export default Button;
+export default Tab;

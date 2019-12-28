@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./tabs.scss";
 import List from "../List/List";
-import Button from "./Button";
+import Tab from "./Tab";
 const Tabs = ({ value, onChange }) => {
   const [active, setActive] = useState(0);
   const handleTab = (index) => {
@@ -16,7 +16,7 @@ const Tabs = ({ value, onChange }) => {
   ];
 
   const renderButtons = tabs.map((todo, index) => (
-    <Button
+    <Tab
       key={index}
       label={todo.tab}
       icon={todo.icon}

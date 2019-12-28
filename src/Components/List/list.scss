@@ -27,6 +27,28 @@
     outline: none;
   }
   button {
-    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    outline: none;
+    background-color: getColor(myOrange);
+    color: white;
+    border: none;
+    border-radius: 2em;
+    max-width: 11em;
+    @include mobileS {
+      width: 20%;
+    }
+    @include mobileTablet {
+      width: 40%;
+    }
+    > span {
+      @include mobileS {
+        display: none;
+      }
+      @include mobileTablet {
+        display: inline-block;
+      }
+    }
   }
 }

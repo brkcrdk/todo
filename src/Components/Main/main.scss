@@ -1,5 +1,7 @@
 @import "../../utils.scss";
-
+* {
+  font-family: "Kulim Park", sans-serif;
+}
 #main-container {
   display: flex;
   max-width: 1441px;

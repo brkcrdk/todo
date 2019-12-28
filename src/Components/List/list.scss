@@ -20,7 +20,7 @@
   input {
     font-size: 1em;
     width: 100%;
-    padding: 0.5em;
+    padding: 0.5em 1.5em;
     border: none;
     outline: none;
   }
@@ -54,10 +54,16 @@
 }
 
 #item-container {
-  max-height: 55vh;
   overflow: scroll;
   overflow-x: hidden;
   border: none;
+  @include mobileS {
+    height: 55vh;
+  }
+  @include desktop {
+    min-height: 60vh;
+  }
+
   .empty {
     text-align: center;
   }

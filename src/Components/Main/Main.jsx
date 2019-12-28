@@ -9,12 +9,7 @@ import { generateKey } from "./generateKey";
 import { alertOpen } from "./alertToggle";
 import Alert from "./Alert";
 const Main = () => {
-  const [todos, setTodos] = useState([
-    { job: "Spora git", isDone: false, id: generateKey("s") },
-    { job: "Alışverişe git", isDone: false, id: generateKey("a") },
-    { job: "Ödev yap", isDone: false, id: generateKey("ö") },
-    { job: "Şu kitabı al", isDone: true, id: generateKey("ş") }
-  ]);
+  const [todos, setTodos] = useState([]);
   const [todoValue, setTodoValue] = useState("");
 
   const todoInput = (e) => {

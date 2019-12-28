@@ -13,7 +13,8 @@ const List = ({ active, index, value, onChange }) => {
           <i className="fas fa-plus" />
         </button>
       </div>
-      <div id="listItem-container">
+      <div>
+        <ListItem />
         <ListItem />
       </div>
     </div>

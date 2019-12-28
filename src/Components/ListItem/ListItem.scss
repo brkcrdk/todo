@@ -1,1 +1,35 @@
 @import "../../utils.scss";
+
+#listItem-container {
+  display: grid;
+  grid-template-columns: 0.5fr 10fr 1.5fr;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid lightgrey;
+  &:first-child {
+    margin-top: -0.5em;
+  }
+  input {
+    margin: 0 0.5em;
+  }
+}
+
+#listItem-buttons {
+  text-align: center;
+  @include mobileS {
+    display: grid;
+  }
+  @include mobileTablet {
+    display: flex;
+  }
+  button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 0.5em;
+    i {
+      font-size: 1.1em;
+    }
+  }
+}

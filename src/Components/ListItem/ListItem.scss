@@ -13,7 +13,10 @@
     margin: 0 auto;
   }
 }
-
+.isDone {
+  text-decoration: line-through;
+  text-decoration-color: grey;
+}
 #listItem-buttons {
   text-align: center;
   @include mobileS {

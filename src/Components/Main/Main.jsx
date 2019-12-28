@@ -10,7 +10,7 @@ const Main = () => {
     { job: "Burak", isDone: false },
     { job: "Murat", isDone: false },
     { job: "Aykut", isDone: false },
-    { job: "Furkan", isDone: false }
+    { job: "Furkan", isDone: true }
   ]);
   const [searchValue, setSearchValue] = useState("");
   const [todoValue, setTodoValue] = useState("");

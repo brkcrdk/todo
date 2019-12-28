@@ -1,13 +1,13 @@
 import React from "react";
 import "./listItem.scss";
-const ListItem = ({ content, removeTodo, moveUp, moveDown }) => {
+const ListItem = ({ job, removeTodo, moveUp, moveDown, isDone }) => {
   return (
     <div id="listItem-container">
       <label id="custom-checkbox">
-        <input type="checkbox" />
+        <input type="checkbox" checked={isDone} />
         <span />
       </label>
-      <p>{content}</p>
+      <p className={isDone ? "isDone" : ""}>{job}</p>
       <div id="listItem-buttons">
         <button>
           <i className="fas fa-chevron-up" onClick={moveUp} />

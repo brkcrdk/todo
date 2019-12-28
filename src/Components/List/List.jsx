@@ -27,7 +27,8 @@ const List = ({
     list.map((todo, index) => (
       <ListItem
         key={index}
-        content={todo.job}
+        job={todo.job}
+        isDone={todo.isDone}
         removeTodo={() => {
           removeTodo(index);
         }}

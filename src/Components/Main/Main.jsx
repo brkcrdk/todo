@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./main.scss";
 import Sidebar from "../Sidebar/Sidebar";
 import Navbar from "../Navbar/Navbar";
 import Tabs from "../Tabs/Tabs";
 import Modal from "../Modal/Modal";
+import Alert from "./Alert";
 import { closeModal } from "../Modal/modalToggle";
 import { generateKey } from "./generateKey";
 import { alertOpen } from "./alertToggle";
-import Alert from "./Alert";
+import mockTodos from "./mockTodos";
 const Main = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(mockTodos);
   const [todoValue, setTodoValue] = useState("");
-
   const todoInput = (e) => {
     setTodoValue(e.target.value);
   };

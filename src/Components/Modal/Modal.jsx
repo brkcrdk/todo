@@ -6,7 +6,7 @@ const Modal = () => {
       <div id="modal-content">
         <button>&times;</button>
         <h5>Yeni Görev Ekle</h5>
-        <textarea>Text area values</textarea>
+        <textarea value="ssss" />
         <button>Ekle</button>
       </div>
     </div>

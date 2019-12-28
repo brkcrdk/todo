@@ -16,6 +16,7 @@
 .isDone {
   text-decoration: line-through;
   text-decoration-color: grey;
+  color: grey;
 }
 #listItem-buttons {
   text-align: center;
@@ -47,7 +48,6 @@
   position: relative;
   > span {
     color: #34495e;
-    // padding: 0.5rem 0.25rem;
   }
   > input {
     height: 1.5em;

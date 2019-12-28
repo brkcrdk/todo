@@ -13,7 +13,7 @@ const List = ({
   moveDown,
   section
 }) => {
-  const list = todo.filter((todo, index) => {
+  const list = todos.filter((todo, index) => {
     if (section === "Aktif Görevler") {
     } else if (section === "Biten Görevler") {
     } else {

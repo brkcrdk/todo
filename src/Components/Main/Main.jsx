@@ -22,12 +22,15 @@ const Main = () => {
   };
   const addTodo = () => {
     if (todoValue !== "") {
-      setTodos([
-        ...todos,
-        { job: todoValue, isDone: false, id: generateKey(todoValue[0]) }
-      ]);
+      const newTodo = {
+        job: todoValue,
+        isDone: false,
+        id: generateKey(todoValue[0])
+      };
+      setTodos([...todos, newTodo]);
       setTodoValue("");
       closeModal();
+      localStorage.setItem(`todo-${newTodo.id}`, JSON.stringify(newTodo));
     } else {
       alertOpen();
     }
@@ -38,6 +41,9 @@ const Main = () => {
       return todo.id !== id;
     });
     setTodos(newArray);
+    if (`todo-${id}` in localStorage) {
+      localStorage.removeItem(`todo-${id}`);
+    }
   };
 
   const moveUp = (index) => {

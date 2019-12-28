@@ -15,13 +15,16 @@ const List = ({
 }) => {
   const list = todos.filter((todo, index) => {
     if (section === "Aktif Görevler") {
+      return todo.isDone === false;
     } else if (section === "Biten Görevler") {
+      return todo.isDone === true;
     } else {
+      return todo;
     }
   });
   const renderTodos =
     todos &&
-    todos.map((todo, index) => (
+    list.map((todo, index) => (
       <ListItem
         key={index}
         content={todo.job}

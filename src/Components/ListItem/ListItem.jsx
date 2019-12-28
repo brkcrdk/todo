@@ -1,7 +1,11 @@
 import React from "react";
-import "./ListItem.scss";
+import "./listItem.scss";
 const ListItem = () => {
-  return <div></div>;
+  return (
+    <div>
+      <input type="checkbox" />
+    </div>
+  );
 };
 
 export default ListItem;

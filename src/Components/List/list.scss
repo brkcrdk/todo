@@ -9,12 +9,11 @@
 }
 
 .active {
-  display: flex;
-  color: red;
+  display: block;
 }
 #input-addBtn {
   width: 100%;
-  padding: 0.5em;
+  padding: 0.8em 0;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid lightgrey;
@@ -36,6 +35,7 @@
     border: none;
     border-radius: 2em;
     max-width: 11em;
+    margin-right: 0.5em;
     @include mobileS {
       width: 20%;
     }

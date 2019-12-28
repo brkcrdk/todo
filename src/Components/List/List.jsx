@@ -1,5 +1,6 @@
 import React from "react";
 import "./list.scss";
+import ListItem from "../ListItem/ListItem";
 const List = ({ active, index, value, onChange }) => {
   return (
     <div
@@ -11,6 +12,9 @@ const List = ({ active, index, value, onChange }) => {
           <span>Yeni görev ekle</span>
           <i className="fas fa-plus" />
         </button>
+      </div>
+      <div id="listItem-container">
+        <ListItem />
       </div>
     </div>
   );

@@ -1,10 +1,17 @@
 import React from "react";
 import "./listItem.scss";
-const ListItem = ({ job, removeTodo, moveUp, moveDown, isDone }) => {
+const ListItem = ({
+  job,
+  removeTodo,
+  moveUp,
+  moveDown,
+  isDone,
+  handleIsDone
+}) => {
   return (
     <div id="listItem-container">
       <label id="custom-checkbox">
-        <input type="checkbox" checked={isDone} />
+        <input type="checkbox" checked={isDone} onChange={handleIsDone} />
         <span />
       </label>
       <p className={isDone ? "isDone" : ""}>{job}</p>

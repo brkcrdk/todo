@@ -11,7 +11,8 @@ const List = ({
   removeTodo,
   moveUp,
   moveDown,
-  section
+  section,
+  handleIsDone
 }) => {
   const list = todos.filter((todo, index) => {
     if (section === "Aktif Görevler") {
@@ -37,6 +38,9 @@ const List = ({
         }}
         moveDown={() => {
           moveDown(index);
+        }}
+        handleIsDone={() => {
+          handleIsDone(index);
         }}
       />
     ));

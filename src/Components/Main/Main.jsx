@@ -47,6 +47,15 @@ const Main = () => {
       setTodos(newArray);
     }
   };
+  const handleIsDone = (index) => {
+    const newObj = { job: todos[index].job, isDone: true };
+    const newArray = [
+      ...todos.slice(0, index),
+      newObj,
+      ...todos.slice(index + 1)
+    ];
+    return setTodos(newArray);
+  };
   return (
     <div id="main-container">
       <Sidebar />
@@ -59,6 +68,7 @@ const Main = () => {
           removeTodo={removeTodo}
           moveUp={moveUp}
           moveDown={moveDown}
+          handleIsDone={handleIsDone}
         />
         <Modal value={todoValue} onChange={todoInput} addTodo={addTodo} />
       </div>

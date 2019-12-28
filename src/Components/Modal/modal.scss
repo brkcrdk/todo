@@ -1,1 +1,19 @@
 @import "../../utils.scss";
+
+#modal-container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+#modal-content {
+  background-color: white;
+  margin: auto;
+  padding: 2em;
+  border-radius: 2em;
+  width: 30%;
+}

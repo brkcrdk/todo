@@ -32,14 +32,24 @@
   border-radius: 0.5em;
   position: relative;
   display: grid;
+
+  align-items: center;
   @include mobileS {
     width: 70%;
   }
   @include mobileTablet {
     width: 35%;
   }
+  > h5 {
+    margin-left: 1em;
+  }
   > textarea {
     resize: none;
+  }
+  & button:last-child {
+    margin: 0 auto;
+    margin-top: 1.5em;
+    width: 7em;
   }
 }
 

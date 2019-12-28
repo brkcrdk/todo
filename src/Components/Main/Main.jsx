@@ -5,12 +5,13 @@ import Navbar from "../Navbar/Navbar";
 import Tabs from "../Tabs/Tabs";
 import Modal from "../Modal/Modal";
 import { closeModal } from "../Modal/modalToggle";
+import { generateKey } from "./generateKey";
 const Main = () => {
   const [todos, setTodos] = useState([
-    { job: "Spora git", isDone: false },
-    { job: "Alışverişe git", isDone: false },
-    { job: "Ödev yap", isDone: false },
-    { job: "Şu kitabı al", isDone: true }
+    { job: "Spora git", isDone: false, id: generateKey("s") },
+    { job: "Alışverişe git", isDone: false, id: generateKey("a") },
+    { job: "Ödev yap", isDone: false, id: generateKey("ö") },
+    { job: "Şu kitabı al", isDone: true, id: generateKey("ş") }
   ]);
   const [searchValue, setSearchValue] = useState("");
   const [todoValue, setTodoValue] = useState("");
@@ -21,13 +22,16 @@ const Main = () => {
     setTodoValue(e.target.value);
   };
   const addTodo = () => {
-    setTodos([...todos, { job: todoValue, isDone: false }]);
+    setTodos([
+      ...todos,
+      { job: todoValue, isDone: false, id: generateKey(todoValue[0]) }
+    ]);
     setTodoValue("");
     closeModal();
   };
-  const removeTodo = (index) => {
+  const removeTodo = (id) => {
     const newArray = todos.filter((todo, i) => {
-      return index !== i;
+      return todo.id !== id;
     });
     setTodos(newArray);
   };
@@ -40,16 +44,16 @@ const Main = () => {
     }
   };
   const moveDown = (index) => {
-    if (index < todos.length - 1) {
+    if (index <= todos.length - 1) {
       const newArray = todos.slice();
       newArray[index] = todos[index + 1];
       newArray[index + 1] = todos[index];
       setTodos(newArray);
     }
   };
-  const handleIsDone = (index) => {
+  const handleIsDone = (id) => {
     const newArray = todos.map((obj, idx) =>
-      idx === index ? { ...obj, isDone: true } : obj
+      obj.id === id ? { ...obj, isDone: true } : obj
     );
     setTodos(newArray);
   };

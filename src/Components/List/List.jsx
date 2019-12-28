@@ -33,7 +33,7 @@ const List = ({
         job={todo.job}
         isDone={todo.isDone}
         removeTodo={() => {
-          removeTodo(index);
+          removeTodo(todo.id);
         }}
         moveUp={() => {
           moveUp(index);
@@ -42,7 +42,7 @@ const List = ({
           moveDown(index);
         }}
         handleIsDone={() => {
-          handleIsDone(index);
+          handleIsDone(todo.id);
         }}
       />
     ));

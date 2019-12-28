@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./main.scss";
 import Sidebar from "../Sidebar/Sidebar";
 import Navbar from "../Navbar/Navbar";
@@ -25,7 +25,6 @@ const Main = () => {
       setTodos([...todos, newTodo]);
       setTodoValue("");
       closeModal();
-      localStorage.setItem(`todo-${newTodo.id}`, JSON.stringify(newTodo));
     } else {
       alertOpen();
     }
@@ -36,9 +35,6 @@ const Main = () => {
       return todo.id !== id;
     });
     setTodos(newArray);
-    if (`todo-${id}` in localStorage) {
-      localStorage.removeItem(`todo-${id}`);
-    }
   };
 
   const moveUp = (index) => {

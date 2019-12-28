@@ -5,7 +5,9 @@ const Modal = () => {
   return (
     <div id="modal-container">
       <div id="modal-content">
-        <button onClick={closeModal}>&times;</button>
+        <button onClick={closeModal} id="modal-closeBtn">
+          &times;
+        </button>
         <h5>Yeni Görev Ekle</h5>
         <textarea value="ssss" />
         <button>Ekle</button>

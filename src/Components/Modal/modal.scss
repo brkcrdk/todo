@@ -29,11 +29,22 @@
   background-color: white;
   margin: auto;
   padding: 2em;
-  border-radius: 2em;
+  border-radius: 0.5em;
+  position: relative;
+  display: grid;
   @include mobileS {
     width: 70%;
   }
   @include mobileTablet {
-    width: 50%;
+    width: 35%;
   }
+  > textarea {
+    resize: none;
+  }
+}
+
+#modal-closeBtn {
+  position: absolute;
+  top: 1em;
+  right: 1em;
 }

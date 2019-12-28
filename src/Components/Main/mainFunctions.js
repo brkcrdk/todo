@@ -3,7 +3,7 @@ import { alertOpen, alertClose } from "./alertToggle";
 import { closeModal } from "../Modal/modalToggle";
 
 export const input = (e, setTodoValue) => {
-  setTodoValue(e.target.value);
+  setTodoValue(e.target.value.trim());
 };
 
 export const remove = (id, todos, setTodos) => {

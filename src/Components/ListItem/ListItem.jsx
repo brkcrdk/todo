@@ -1,6 +1,6 @@
 import React from "react";
 import "./listItem.scss";
-const ListItem = ({ content }) => {
+const ListItem = ({ content, removeTodo }) => {
   return (
     <div id="listItem-container">
       <label id="custom-checkbox">
@@ -13,7 +13,7 @@ const ListItem = ({ content }) => {
           <i className="fas fa-chevron-up" />
         </button>
         <button>
-          <i className="fas fa-trash" />
+          <i className="fas fa-trash" onClick={removeTodo} />
         </button>
         <button>
           <i className="fas fa-chevron-down" />

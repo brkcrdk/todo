@@ -6,7 +6,12 @@ import Tabs from "../Tabs/Tabs";
 import Modal from "../Modal/Modal";
 import { closeModal } from "../Modal/modalToggle";
 const Main = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([
+    { job: "Burak", isDone: false },
+    { job: "Murat", isDone: false },
+    { job: "Aykut", isDone: false },
+    { job: "Furkan", isDone: false }
+  ]);
   const [searchValue, setSearchValue] = useState("");
   const [todoValue, setTodoValue] = useState("");
   // const swap = (array, idx1) => {
@@ -31,12 +36,24 @@ const Main = () => {
     setTodoValue("");
     closeModal();
   };
+  const removeTodo = (index) => {
+    const newArray = todos.filter((todo, i) => {
+      return index !== i;
+    });
+    setTodos(newArray);
+  };
+
   return (
     <div id="main-container">
       <Sidebar />
       <div id="content-container">
         <Navbar />
-        <Tabs value={searchValue} onChange={searchInput} todos={todos} />
+        <Tabs
+          value={searchValue}
+          onChange={searchInput}
+          todos={todos}
+          removeTodo={removeTodo}
+        />
         <Modal value={todoValue} onChange={todoInput} addTodo={addTodo} />
       </div>
     </div>

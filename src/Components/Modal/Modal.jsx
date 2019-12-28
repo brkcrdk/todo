@@ -10,6 +10,7 @@ const Modal = ({ value, onChange, addTodo }) => {
         </button>
         <h5>Yeni Görev Ekle</h5>
         <textarea
+          id="modal-textarea"
           value={value}
           onChange={onChange}
           placeholder="Görev giriniz.."

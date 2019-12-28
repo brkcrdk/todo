@@ -2,10 +2,18 @@ import React from "react";
 import "./list.scss";
 import ListItem from "../ListItem/ListItem";
 import { openModal } from "../Modal/modalToggle";
-const List = ({ active, index, value, onChange, todos }) => {
+const List = ({ active, index, value, onChange, todos, removeTodo }) => {
   const renderTodos =
     todos &&
-    todos.map((todo, index) => <ListItem key={index} content={todo.job} />);
+    todos.map((todo, index) => (
+      <ListItem
+        key={index}
+        content={todo.job}
+        removeTodo={() => {
+          removeTodo(index);
+        }}
+      />
+    ));
   return (
     <div
       id="list-container"

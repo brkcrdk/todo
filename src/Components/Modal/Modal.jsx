@@ -1,7 +1,7 @@
 import React from "react";
 import "./modal.scss";
 import { closeModal } from "./modalToggle";
-const Modal = () => {
+const Modal = ({ value, onChange, addTodo }) => {
   return (
     <div id="modal-container">
       <div id="modal-content">
@@ -9,8 +9,12 @@ const Modal = () => {
           &times;
         </button>
         <h5>Yeni Görev Ekle</h5>
-        <textarea value="ssss" />
-        <button>EKLE</button>
+        <textarea
+          value={value}
+          onChange={onChange}
+          placeholder="Görev giriniz.."
+        />
+        <button onClick={addTodo}>EKLE</button>
       </div>
     </div>
   );

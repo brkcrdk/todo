@@ -29,6 +29,7 @@ const Tabs = ({ value, onChange, todos, removeTodo, moveUp, moveDown }) => {
   ));
   const renderList = tabs.map((todo, index) => (
     <List
+      section={todo.tab}
       key={index}
       active={active}
       index={index}

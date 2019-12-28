@@ -10,8 +10,15 @@ const List = ({
   todos,
   removeTodo,
   moveUp,
-  moveDown
+  moveDown,
+  section
 }) => {
+  const list = todo.filter((todo, index) => {
+    if (section === "Aktif Görevler") {
+    } else if (section === "Biten Görevler") {
+    } else {
+    }
+  });
   const renderTodos =
     todos &&
     todos.map((todo, index) => (

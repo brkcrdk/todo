@@ -23,13 +23,17 @@
     display: flex;
   }
   button {
-    border: none;
     outline: none;
     background-color: transparent;
     cursor: pointer;
-    margin: 0 auto;
+    margin: 0.5em auto;
+    border: none;
+    &:hover > i {
+      color: getColor(myOrange);
+    }
     i {
-      font-size: 1.1em;
+      font-size: 1.3em;
+      color: grey;
     }
   }
 }

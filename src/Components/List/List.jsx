@@ -23,7 +23,7 @@ const List = ({
     }
   });
   const renderTodos =
-    todos &&
+    list &&
     list.map((todo, index) => (
       <ListItem
         key={index}
@@ -39,6 +39,7 @@ const List = ({
         }}
       />
     ));
+
   return (
     <div
       id="list-container"
@@ -50,7 +51,9 @@ const List = ({
           <i className="fas fa-plus" />
         </button>
       </div>
-      <div id="item-container">{renderTodos}</div>
+      <div id="item-container">
+        {list.length > 0 ? renderTodos : <p className="empty">Görev yok.</p>}
+      </div>
     </div>
   );
 };

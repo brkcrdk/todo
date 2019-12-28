@@ -2,7 +2,10 @@ import React from "react";
 import "./list.scss";
 import ListItem from "../ListItem/ListItem";
 import { openModal } from "../Modal/modalToggle";
-const List = ({ active, index, value, onChange }) => {
+const List = ({ active, index, value, onChange, todos }) => {
+  const renderTodos =
+    todos &&
+    todos.map((todo, index) => <ListItem key={index} content={todo.job} />);
   return (
     <div
       id="list-container"
@@ -14,18 +17,7 @@ const List = ({ active, index, value, onChange }) => {
           <i className="fas fa-plus" />
         </button>
       </div>
-      <div id="item-container">
-        <ListItem />
-        <ListItem />
-        <ListItem />
-        <ListItem />
-        <ListItem />
-        <ListItem />
-        <ListItem />
-
-        <ListItem />
-        <ListItem />
-      </div>
+      <div id="item-container">{renderTodos}</div>
     </div>
   );
 };

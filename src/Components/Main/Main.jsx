@@ -31,13 +31,12 @@ const Main = () => {
     setTodoValue("");
     closeModal();
   };
-  console.log(todos);
   return (
     <div id="main-container">
       <Sidebar />
       <div id="content-container">
         <Navbar />
-        <Tabs value={searchValue} onChange={searchInput} />
+        <Tabs value={searchValue} onChange={searchInput} todos={todos} />
         <Modal value={todoValue} onChange={todoInput} addTodo={addTodo} />
       </div>
     </div>

@@ -1,17 +1,13 @@
 import React from "react";
 import "./listItem.scss";
-const ListItem = () => {
+const ListItem = ({ content }) => {
   return (
     <div id="listItem-container">
       <label id="custom-checkbox">
         <input type="checkbox" />
         <span />
       </label>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis,
-        sapiente! Perferendis temporibus magnam unde dolor cum amet voluptatem,
-        ad neque.
-      </p>
+      <p>{content}</p>
       <div id="listItem-buttons">
         <button>
           <i className="fas fa-chevron-up" />

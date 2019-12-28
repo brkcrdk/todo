@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./list.scss";
 import ListItem from "../ListItem/ListItem";
 const List = ({ active, index, value, onChange }) => {
+  const [modalToggle, setModalToggle] = useState(false);
+  const handleModalToggle = () => {
+    const modal = document.getElementById("modal-container");
+    if (modalToggle) {
+    } else {
+    }
+  };
   return (
     <div
       id="list-container"

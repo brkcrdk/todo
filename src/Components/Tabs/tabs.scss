@@ -2,16 +2,37 @@
 .tab-content {
   display: none;
 }
+
 #buttons {
+  border-top: 0.1px solid lightgrey;
   background-color: getColor(bgColorGrey);
+  @include mobileS {
+    display: grid;
+    grid-template-columns: repeat(3, 4fr);
+  }
+  @include mobileTablet {
+    display: flex;
+  }
   > button {
     border: 1px solid lightgrey;
     outline: none;
     padding: 1em;
-    transition: 0.5s;
+    i {
+      font-size: 1.5em;
+      padding-right: 0.5em;
+    }
+    span {
+      @include mobileS {
+        display: none;
+      }
+      @include mobileTablet {
+        display: inline-block;
+      }
+    }
   }
 }
 
 .activeBtn {
   background-color: white;
+  border-bottom-color: white !important;
 }

@@ -6,6 +6,8 @@ import Tabs from "../Tabs/Tabs";
 import Modal from "../Modal/Modal";
 import { closeModal } from "../Modal/modalToggle";
 import { generateKey } from "./generateKey";
+import { alertOpen } from "./alertToggle";
+import Alert from "./Alert";
 const Main = () => {
   const [todos, setTodos] = useState([
     { job: "Spora git", isDone: false, id: generateKey("s") },
@@ -19,19 +21,25 @@ const Main = () => {
     setTodoValue(e.target.value);
   };
   const addTodo = () => {
-    setTodos([
-      ...todos,
-      { job: todoValue, isDone: false, id: generateKey(todoValue[0]) }
-    ]);
-    setTodoValue("");
-    closeModal();
+    if (todoValue !== "") {
+      setTodos([
+        ...todos,
+        { job: todoValue, isDone: false, id: generateKey(todoValue[0]) }
+      ]);
+      setTodoValue("");
+      closeModal();
+    } else {
+      alertOpen();
+    }
   };
+
   const removeTodo = (id) => {
     const newArray = todos.filter((todo, i) => {
       return todo.id !== id;
     });
     setTodos(newArray);
   };
+
   const moveUp = (index) => {
     if (index > 0) {
       const newArray = todos.slice();
@@ -68,6 +76,7 @@ const Main = () => {
           handleIsDone={handleIsDone}
         />
         <Modal value={todoValue} onChange={todoInput} addTodo={addTodo} />
+        <Alert />
       </div>
     </div>
   );

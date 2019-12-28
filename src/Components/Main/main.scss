@@ -28,3 +28,23 @@
   flex-direction: column;
   width: 100%;
 }
+
+#alert-container {
+  background-color: getColor(myOrange);
+  border-radius: 0.5em;
+  position: fixed;
+  bottom: 1em;
+  right: 1.5em;
+  z-index: 2;
+  padding: 1em;
+  transform: translateX(150%);
+  transition: 0.5s;
+  > button {
+    border: none;
+    background-color: transparent;
+    font-size: 1.7em;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

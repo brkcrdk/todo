@@ -20,7 +20,7 @@ const Main = () => {
   const inputOnChange = (e) => {
     setValue(e.target.value);
   };
-  console.log(value);
+
   return (
     <div id="main-container">
       <Sidebar />

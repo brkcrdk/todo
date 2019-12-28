@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./list.scss";
 import ListItem from "../ListItem/ListItem";
 import { openModal } from "../Modal/modalToggle";
+import { todoFilter } from "./todoFilter";
 const List = ({
   active,
   index,
@@ -16,26 +17,8 @@ const List = ({
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
-  const list =
-    todos &&
-    todos
-      .filter((todo, index) => {
-        if (section === "Aktif Görevler") {
-          return todo.isDone === false;
-        } else if (section === "Biten Görevler") {
-          return todo.isDone === true;
-        } else {
-          return todo;
-        }
-      })
-      .filter((todo) => {
-        if (search !== "") {
-          const regExp = new RegExp(search, "gi");
-          return todo.job.match(regExp);
-        } else {
-          return todo;
-        }
-      });
+  const list = todoFilter(todos, section, search);
+
   const renderTodos =
     list &&
     list.map((todo, index) => (

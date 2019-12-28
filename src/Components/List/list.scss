@@ -36,6 +36,7 @@
     border-radius: 2em;
     max-width: 11em;
     margin-right: 0.5em;
+    cursor: pointer;
     @include mobileS {
       width: 20%;
     }

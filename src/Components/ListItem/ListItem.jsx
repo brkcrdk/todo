@@ -3,7 +3,10 @@ import "./listItem.scss";
 const ListItem = () => {
   return (
     <div id="listItem-container">
-      <input type="checkbox" />
+      <label id="custom-checkbox">
+        <input type="checkbox" />
+        <span />
+      </label>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis,
         sapiente! Perferendis temporibus magnam unde dolor cum amet voluptatem,

@@ -9,8 +9,8 @@
   &:first-child {
     margin-top: -0.5em;
   }
-  input {
-    margin: 0 0.5em;
+  label {
+    margin: 0 auto;
   }
 }
 
@@ -27,9 +27,49 @@
     outline: none;
     background-color: transparent;
     cursor: pointer;
-    margin: 0.5em;
+    margin: 0 auto;
     i {
       font-size: 1.1em;
     }
+  }
+}
+
+#custom-checkbox {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+  > span {
+    color: #34495e;
+    // padding: 0.5rem 0.25rem;
+  }
+  > input {
+    height: 1.5em;
+    width: 1.5em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: 1px solid #34495e;
+    border-radius: 4px;
+    outline: none;
+    transition-duration: 0.3s;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  > input:checked {
+    border: 1px solid #34495e;
+    background-color: transparent;
+    + span:before {
+      content: "\2714";
+      display: block;
+      text-align: center;
+      color: #34495e;
+      position: absolute;
+      left: 0.5em;
+      top: 0.15em;
+    }
+  }
+  > input:active {
+    border: 2px solid #34495e;
   }
 }

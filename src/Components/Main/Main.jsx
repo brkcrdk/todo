@@ -42,7 +42,22 @@ const Main = () => {
     });
     setTodos(newArray);
   };
-
+  const moveUp = (index) => {
+    if (index > 0) {
+      const newArray = todos.slice();
+      newArray[index] = todos[index - 1];
+      newArray[index - 1] = todos[index];
+      setTodos(newArray);
+    }
+  };
+  const moveDown = (index) => {
+    if (index < todos.length) {
+      const newArray = todos.slice();
+      newArray[index] = todos[index + 1];
+      newArray[index + 1] = todos[index];
+      setTodos(newArray);
+    }
+  };
   return (
     <div id="main-container">
       <Sidebar />
@@ -53,6 +68,8 @@ const Main = () => {
           onChange={searchInput}
           todos={todos}
           removeTodo={removeTodo}
+          moveUp={moveUp}
+          moveDown={moveDown}
         />
         <Modal value={todoValue} onChange={todoInput} addTodo={addTodo} />
       </div>

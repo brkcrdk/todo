@@ -18,15 +18,24 @@ const List = ({
   };
   const list =
     todos &&
-    todos.filter((todo, index) => {
-      if (section === "Aktif Görevler") {
-        return todo.isDone === false;
-      } else if (section === "Biten Görevler") {
-        return todo.isDone === true;
-      } else {
-        return todo;
-      }
-    });
+    todos
+      .filter((todo, index) => {
+        if (section === "Aktif Görevler") {
+          return todo.isDone === false;
+        } else if (section === "Biten Görevler") {
+          return todo.isDone === true;
+        } else {
+          return todo;
+        }
+      })
+      .filter((todo) => {
+        if (search !== "") {
+          const regExp = new RegExp(search, "gi");
+          return todo.job.match(regExp);
+        } else {
+          return todo;
+        }
+      });
   const renderTodos =
     list &&
     list.map((todo, index) => (

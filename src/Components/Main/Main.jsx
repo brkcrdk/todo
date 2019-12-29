@@ -14,10 +14,9 @@ import {
   input,
   fetchLocal
 } from "./mainFunctions";
-import mockTodos from "./mockTodos";
 
 const Main = () => {
-  const [todos, setTodos] = useState(mockTodos);
+  const [todos, setTodos] = useState([]);
   const [todoValue, setTodoValue] = useState("");
 
   useEffect(() => {

@@ -51,6 +51,12 @@ export const down = (index, todos, setTodos) => {
     newArray[index] = todos[index + 1];
     newArray[index + 1] = todos[index];
     setTodos(newArray);
+    localStorage.clear();
+    newArray.map((item) => {
+      const local = JSON.stringify(item);
+
+      return localStorage.setItem(`todo-${item.id}`, local);
+    });
   }
 };
 

@@ -80,10 +80,6 @@ export const fetchLocal = () => {
     if (item !== null) {
       const todo = JSON.parse(item);
       newArray.push(todo);
-      // const todoIds = item.map((key) => key.id);
-      // if (todoIds.indexOf(todo.id) === -1) {
-      //   setTodos([...todos, todo].reverse());
-      // }
     }
     return item;
   });

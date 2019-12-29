@@ -57,3 +57,18 @@ export const done = (id, todos, setTodos) => {
   );
   setTodos(newArray);
 };
+
+export const fetchLocal = (todos, setTodos) => {
+  const local = { ...localStorage };
+  Object.keys(local).map((key) => {
+    const item = localStorage.getItem(key);
+    if (item !== null) {
+      const todo = JSON.parse(item);
+      const todoIds = todos.map((todo) => todo.id);
+      if (todoIds.indexOf(todo.id) === -1) {
+        setTodos([...todos, todo]);
+      }
+    }
+    return item;
+  });
+};

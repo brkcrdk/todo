@@ -1,16 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./main.scss";
 import Sidebar from "../Sidebar/Sidebar";
 import Navbar from "../Navbar/Navbar";
 import Tabs from "../Tabs/Tabs";
 import Modal from "../Modal/Modal";
 import Alert from "./Alert";
-import { remove, add, up, down, done, input } from "./mainFunctions";
+import {
+  remove,
+  add,
+  up,
+  down,
+  done,
+  input,
+  fetchLocal
+} from "./mainFunctions";
 import mockTodos from "./mockTodos";
 
 const Main = () => {
   const [todos, setTodos] = useState(mockTodos);
   const [todoValue, setTodoValue] = useState("");
+
+  useEffect(() => {
+    fetchLocal(todos, setTodos);
+  }, [todos]);
+
   const todoInput = (e) => {
     input(e, setTodoValue);
   };

@@ -6,7 +6,9 @@ const ListItem = ({
   moveUp,
   moveDown,
   isDone,
-  handleIsDone
+  handleIsDone,
+  upDisable,
+  downDisable
 }) => {
   return (
     <div id="listItem-container">
@@ -16,13 +18,13 @@ const ListItem = ({
       </label>
       <p className={isDone ? "isDone" : ""}>{job}</p>
       <div id="listItem-buttons">
-        <button onClick={moveUp}>
+        <button disabled={upDisable} onClick={moveUp}>
           <i className="fas fa-chevron-up" />
         </button>
         <button onClick={removeTodo}>
           <i className="fas fa-trash" />
         </button>
-        <button onClick={moveDown}>
+        <button disabled={downDisable} onClick={moveDown}>
           <i className="fas fa-chevron-down" />
         </button>
       </div>

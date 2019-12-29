@@ -23,6 +23,8 @@ const List = ({
     list &&
     list.map((todo, index) => (
       <ListItem
+        upDisable={index === 0}
+        downDisable={list.length - 1 === index}
         key={index}
         job={todo.job}
         isDone={todo.isDone}

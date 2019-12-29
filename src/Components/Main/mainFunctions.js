@@ -2,8 +2,16 @@ import { generateKey } from "./generateKey";
 import { alertOpen, alertClose } from "./alertToggle";
 import { closeModal } from "../Modal/modalToggle";
 
+const updateLocalStorage = (array) => {
+  localStorage.clear();
+  array.map((item) => {
+    const local = JSON.stringify(item);
+    return localStorage.setItem(`todo-${item.id}`, local);
+  });
+};
+
 export const input = (e, setTodoValue) => {
-  setTodoValue(e.target.value.trim());
+  setTodoValue(e.target.value.trimLeft());
 };
 
 export const remove = (id, todos, setTodos) => {
@@ -42,6 +50,7 @@ export const up = (index, todos, setTodos) => {
     newArray[index] = todos[index - 1];
     newArray[index - 1] = todos[index];
     setTodos(newArray);
+    updateLocalStorage(newArray);
   }
 };
 
@@ -51,11 +60,7 @@ export const down = (index, todos, setTodos) => {
     newArray[index] = todos[index + 1];
     newArray[index + 1] = todos[index];
     setTodos(newArray);
-    localStorage.clear();
-    newArray.map((item) => {
-      const local = JSON.stringify(item);
-      return localStorage.setItem(`todo-${item.id}`, local);
-    });
+    updateLocalStorage(newArray);
   }
 };
 
@@ -64,6 +69,7 @@ export const done = (id, todos, setTodos) => {
     obj.id === id ? { ...obj, isDone: true } : obj
   );
   setTodos(newArray);
+  updateLocalStorage(newArray);
 };
 
 export const fetchLocal = (todos, setTodos) => {
@@ -75,7 +81,7 @@ export const fetchLocal = (todos, setTodos) => {
       const todoIds = todos.map((todo) => todo.id);
       if (todoIds.indexOf(todo.id) === -1) {
         console.log(todo);
-        setTodos([...todos, todo]);
+        setTodos([...todos, todo].reverse());
       }
     }
     return item;

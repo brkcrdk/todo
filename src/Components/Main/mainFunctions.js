@@ -72,17 +72,20 @@ export const done = (id, todos, setTodos) => {
   updateLocalStorage(newArray);
 };
 
-export const fetchLocal = (todos, setTodos) => {
+export const fetchLocal = () => {
   const local = { ...localStorage };
+  const newArray = [];
   Object.keys(local).map((key) => {
     const item = localStorage.getItem(key);
     if (item !== null) {
       const todo = JSON.parse(item);
-      const todoIds = todos.map((todo) => todo.id);
-      if (todoIds.indexOf(todo.id) === -1) {
-        setTodos([...todos, todo].reverse());
-      }
+      newArray.push(todo);
+      // const todoIds = item.map((key) => key.id);
+      // if (todoIds.indexOf(todo.id) === -1) {
+      //   setTodos([...todos, todo].reverse());
+      // }
     }
     return item;
   });
+  return newArray;
 };

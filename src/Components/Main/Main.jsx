@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./main.scss";
 import Sidebar from "../Sidebar/Sidebar";
 import Navbar from "../Navbar/Navbar";
@@ -16,12 +16,8 @@ import {
 } from "./mainFunctions";
 
 const Main = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([...fetchLocal()]);
   const [todoValue, setTodoValue] = useState("");
-
-  useEffect(() => {
-    fetchLocal(todos, setTodos);
-  }, [todos]);
 
   const todoInput = (e) => {
     input(e, setTodoValue);

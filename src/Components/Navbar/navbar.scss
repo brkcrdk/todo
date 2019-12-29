@@ -6,7 +6,7 @@
   padding-top: 2em;
   background-color: getColor(bgColorGrey);
   span {
-    border: 0.6px solid lightgrey;
+    border: 0.6px solid getColor(myGrey);
     padding: 0.5em 1em;
     border-radius: 1em;
     @include mobileS {

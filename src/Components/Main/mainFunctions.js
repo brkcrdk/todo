@@ -20,9 +20,11 @@ export const add = (todoValue, setTodos, todos, setTodoValue) => {
       isDone: false,
       id: generateKey(todoValue[0])
     };
+    const local = JSON.stringify(newTodo);
     setTodos([...todos, newTodo]);
     setTodoValue("");
     closeModal();
+    localStorage.setItem(`todo-${newTodo.id}`, local);
   } else {
     alertOpen();
     setTimeout(() => {

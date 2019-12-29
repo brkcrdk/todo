@@ -17,7 +17,6 @@ import {
 
 const Main = () => {
   const [todos, setTodos] = useState([...fetchLocal()]);
-  console.log(fetchLocal());
   const [todoValue, setTodoValue] = useState("");
   const todoInput = (e) => {
     input(e, setTodoValue);

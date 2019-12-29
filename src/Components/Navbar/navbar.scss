@@ -22,12 +22,6 @@
   font-size: 1.2em;
   margin-top: 0.2em;
   margin-right: 0.5em;
-  @include mobileS {
-    display: block;
-  }
-  @include mobileTablet {
-    display: none;
-  }
 }
 #panelBtn {
   font-size: 0.9em;

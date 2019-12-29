@@ -18,6 +18,7 @@ const List = ({
     setSearch(e.target.value);
   };
   const list = todoFilter(todos, section, search);
+
   const renderTodos =
     list &&
     list.map((todo, index) => (

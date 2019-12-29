@@ -54,7 +54,6 @@ export const down = (index, todos, setTodos) => {
     localStorage.clear();
     newArray.map((item) => {
       const local = JSON.stringify(item);
-
       return localStorage.setItem(`todo-${item.id}`, local);
     });
   }
@@ -75,6 +74,7 @@ export const fetchLocal = (todos, setTodos) => {
       const todo = JSON.parse(item);
       const todoIds = todos.map((todo) => todo.id);
       if (todoIds.indexOf(todo.id) === -1) {
+        console.log(todo);
         setTodos([...todos, todo]);
       }
     }

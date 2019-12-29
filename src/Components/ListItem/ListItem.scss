@@ -29,6 +29,7 @@
     cursor: pointer;
     margin: 0.5em auto;
     border: none;
+
     &:hover > i {
       color: getColor(myOrange);
     }
@@ -38,7 +39,9 @@
     }
   }
 }
-
+.disabled {
+  visibility: hidden;
+}
 #custom-checkbox {
   display: inline-flex;
   cursor: pointer;

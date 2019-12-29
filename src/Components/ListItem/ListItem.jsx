@@ -6,10 +6,8 @@ const ListItem = ({
   moveUp,
   moveDown,
   isDone,
-  handleIsDone,
-  isDisable
+  handleIsDone
 }) => {
-  console.log(isDisable);
   return (
     <div id="listItem-container">
       <label id="custom-checkbox">
@@ -18,13 +16,13 @@ const ListItem = ({
       </label>
       <p className={isDone ? "isDone" : ""}>{job}</p>
       <div id="listItem-buttons">
-        <button disabled={isDisable} onClick={moveUp}>
+        <button onClick={moveUp}>
           <i className="fas fa-chevron-up" />
         </button>
         <button onClick={removeTodo}>
           <i className="fas fa-trash" />
         </button>
-        <button disabled={isDisable} onClick={moveDown}>
+        <button onClick={moveDown}>
           <i className="fas fa-chevron-down" />
         </button>
       </div>

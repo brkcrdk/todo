@@ -11,6 +11,9 @@ export const remove = (id, todos, setTodos) => {
     return todo.id !== id;
   });
   setTodos(newArray);
+  if (`todo-${id}` in localStorage) {
+    localStorage.removeItem(`todo-${id}`);
+  }
 };
 
 export const add = (todoValue, setTodos, todos, setTodoValue) => {

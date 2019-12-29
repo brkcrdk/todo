@@ -1,12 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Kulim+Park&display=swap");
 
 $mobileS: 320px;
-$mobileM: 375px;
-$mobileL: 420px;
 $mobileTablet: 600px;
 $tablet: 768px;
 $desktop: 1024px;
-$wideScreen: 1441px;
 
 @mixin mobileS {
   @media (min-width: #{$mobileS}) {
@@ -29,11 +26,6 @@ $wideScreen: 1441px;
   }
 }
 
-@mixin wideScreen {
-  @media (min-width:#{$wideScreen}) {
-    @content;
-  }
-}
 $colours: (
   myOrange: #fc6657,
   myGrey: #a9b3b6,
